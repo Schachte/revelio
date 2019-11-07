@@ -17,10 +17,10 @@ import { useQuery } from '@apollo/react-hooks'
 
 import QueryStatus from '../query-status'
 import { BasicSearch } from '../basic-search'
-import Visualizations from './visualizations'
+// import Visualizations from './visualizations'
 import QuerySelector from './query-selector'
 
-const MemoizedVisualizations = memo(Visualizations)
+// const MemoizedVisualizations = memo(Visualizations)
 
 const Loading = () => {
   return (
@@ -147,7 +147,7 @@ export const Workspace = () => {
         ) : null}
       </div>
       <div style={{ flex: '1' }}>
-        <MemoizedVisualizations results={results} />
+        {/* <MemoizedVisualizations results={results} /> */}
       </div>
     </div>
   )

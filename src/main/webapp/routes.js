@@ -22,11 +22,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 
-import {
-  HashRouter as Router,
-  Link as ReactLink,
-  Route,
-} from 'react-router-dom'
+import { Link as ReactLink, Route } from 'react-router-dom'
 
 import AboutRoute from './about'
 import SourcesRoute from './sources'
@@ -34,6 +30,7 @@ import SimpleSearch from './simple-search'
 import ResultForms from './result-forms'
 import WorkspacesIndex, { Workspace } from './workspaces/workspaces'
 import UserSettings from './user-settings'
+import { SelectionProvider } from './react-hooks/use-selection-interface'
 
 const Link = props => {
   return (
@@ -51,6 +48,7 @@ const Link = props => {
 
 const createRoute = (path, title, Icon = AccessibleForwardIcon, component) => {
   return {
+    exact: true,
     title,
     path,
     link: props => {
@@ -72,7 +70,7 @@ const createRoute = (path, title, Icon = AccessibleForwardIcon, component) => {
   }
 }
 
-const routes = [
+export const routes = [
   createRoute('/', 'Home', HomeIcon),
   createRoute(
     '/workspaces',
@@ -126,7 +124,7 @@ const AppRouter = () => {
   }
 
   return (
-    <Router>
+    <SelectionProvider>
       <Drawer anchor="left" open={open} onClose={handleDrawerClose}>
         <List style={{ width: 300 }}>
           {routes.map(route => {
@@ -151,7 +149,7 @@ const AppRouter = () => {
         }
         return <Route key={path} exact path={path} render={render} />
       })}
-    </Router>
+    </SelectionProvider>
   )
 }
 

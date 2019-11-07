@@ -134,6 +134,7 @@ const SimpleSearch = props => {
 
 const Container = () => {
   const [selected] = useSelectionInterface()
+  console.log(selected)
 
   const { results, status, onSearch, onCancel, onClear } = useQueryExecutor()
 

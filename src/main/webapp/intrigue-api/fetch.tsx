@@ -12,7 +12,7 @@
  * <http://www.gnu.org/licenses/lgpl.html>.
  *
  **/
-
+const fetch = require('node-fetch')
 const url = require('url')
 const qs = require('querystring')
 
@@ -20,8 +20,6 @@ type Options = {
   headers?: object
   [key: string]: unknown
 }
-
-const fetch = window.fetch
 
 const cacheBust = (urlString: string) => {
   const { query, ...rest } = url.parse(urlString)

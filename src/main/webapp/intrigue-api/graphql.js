@@ -39,7 +39,7 @@ const systemProperties = async () => {
 }
 
 const { send } = createTransport({
-  ...window.location,
+  ///...window.location,
   pathname: ROOT,
 })
 

@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom'
 
 import GoldenLayout from 'golden-layout'
 
-import 'golden-layout/src/css/goldenlayout-base.css'
-import 'golden-layout/src/css/goldenlayout-light-theme.css'
+//import 'golden-layout/src/css/goldenlayout-base.css'
+//import 'golden-layout/src/css/goldenlayout-light-theme.css'
 
 const Context = React.createContext()
 

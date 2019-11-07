@@ -22,7 +22,6 @@ props {
 }
 
 */
-
 function throttled(delay, fn) {
   let lastCall = 0
   return (...args) => {
